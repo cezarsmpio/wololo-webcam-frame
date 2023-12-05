@@ -62,6 +62,7 @@ export function MeshGradient(props: MeshGradientProps) {
     transform: `scale(${props.blur ? props.blur * 0.005 + 1 : 1})`,
     opacity: String(opacity),
   };
+  const colors = React.useMemo(() => props.colors, []);
 
   const maskStyle = {
     width,
@@ -75,10 +76,8 @@ export function MeshGradient(props: MeshGradientProps) {
   });
 
   React.useEffect(() => {
-    const colors = props.colors ?? ["#E008E5", "#322adb", "#00000"];
-
-    mesh.initGradient(`#${canvasId}`, colors);
-  }, [canvasId, mesh, props.colors]);
+    mesh.initGradient(`#${canvasId}`, colors ?? ["#E008E5", "#322adb", "#00000"]);
+  }, [canvasId, mesh, colors]);
 
   React.useEffect(() => {
     mesh.changePosition(pos);
