@@ -5,6 +5,6 @@ import "./index.css";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
-    <MeshGradient animated={true} speed={0.05} colors={["#ffe100", "#fe250a", "#fd9e00", "#d855ff", "#260a87", "#171d2c"]} />
+    <MeshGradient animated={true} speed={0.05} colors={["#ffe100", "#fe250a", "#fd9e00", "#260a87"]} />
   </React.StrictMode>
 );
